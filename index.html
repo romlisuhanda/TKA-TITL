@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Kemampuan Akademik (TKA) Ketenagalistrikan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-slate-900 via-brand-900 to-slate-900 text-white shadow-lg border-b border-slate-700 sticky top-0 z-40 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-brand-600/30 rounded-lg border border-brand-400/30">
+                    <i class="fa-solid fa-bolt-lightning text-amber-400 text-xl sm:text-2xl animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                        TKA KETENAGALISTRIKAN
+                        <span class="text-xs bg-brand-500/30 border border-brand-400/30 text-brand-200 px-2 py-0.5 rounded-full font-medium hidden sm:inline-block">Kurikulum Merdeka</span>
+                    </h1>
+                    <p class="text-xs text-slate-300">Tes Kemampuan Akademik Keahlian Teknik Instalasi Tenaga Listrik</p>
+                </div>
+            </div>
+            <div id="header-user-info" class="hidden items-center gap-3 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                <div class="text-right text-xs">
+                    <p id="nav-user-name" class="font-semibold text-slate-200 truncate max-w-[120px] sm:max-w-[200px]"></p>
+                    <p id="nav-user-class" class="text-slate-400"></p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-sm">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- SCREEN 1: IDENTITAS DAN PETUNJUK PENGERJAAN -->
+        <section id="screen-intro" class="space-y-6 max-w-4xl mx-auto">
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-br from-brand-900 via-slate-900 to-brand-800 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-slate-700">
+                <div class="absolute right-0 top-0 bottom-0 opacity-10 flex items-center pointer-events-none pr-8">
+                    <i class="fa-solid fa-plug-circle-bolt text-[16rem]"></i>
+                </div>
+                <div class="relative z-10 space-y-3">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                        <i class="fa-solid fa-award mr-1.5"></i> Evaluasi Kompetensi Keahlian TITL
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Tes Kemampuan Akademik (TKA) Ketenagalistrikan</h2>
+                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+                        Ujian berbasis komputer untuk mengukur pemahaman komprehensif siswa dalam bidang Wawasan Kerja, K3, Teori Dasar Listrik, Alat Ukur, Gambar Teknik, serta Sistem Kelistrikan Modern.
+                    </p>
+                    <div class="pt-2 flex items-center gap-2 text-xs font-medium text-amber-300/90 border-t border-slate-700/60 w-fit">
+                        <i class="fa-solid fa-code text-amber-400"></i>
+                        <span>Made by <strong>Pustaka Perangkat</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Deskripsi & Aturan Pengerjaan -->
+                <div class="md:col-span-7 bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center border-b border-slate-100 pb-3">
+                        <i class="fa-solid fa-clipboard-list text-brand-600 mr-2.5 text-xl"></i> Aturan & Petunjuk Pengerjaan TKA
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs mr-3 mt-0.5">1</span>
+                            <span><strong>Cakupan Soal:</strong> Terdiri dari <strong>30 soal pilihan ganda (A-E)</strong> yang mencakup 15 elemen kompetensi utama kelistrikan (masing-masing 2 soal).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs mr-3 mt-0.5">2</span>
+                            <span><strong>Pengisian Identitas:</strong> Siswa wajib mengisikan Nama Lengkap, Kelas (XII TITL 1 - 5), dan Nama Sekolah secara benar sebelum memulai ujian.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs mr-3 mt-0.5">3</span>
+                            <span><strong>Navigasi & Ragu-Ragu:</strong> Anda dapat berpindah soal secara bebas melalui panel nomor soal. Gunakan opsi "Ragu-Ragu" untuk menandai soal yang ingin ditinjau kembali.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs mr-3 mt-0.5">4</span>
+                            <span><strong>Sistem Penilaian:</strong> Setiap jawaban benar bernilai +3.33 poin (Skala Maksimal 100). Tidak ada pengurangan nilai untuk jawaban salah.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs mr-3 mt-0.5">5</span>
+                            <span><strong>Pembahasan Soal:</strong> Kunci jawaban beserta pembahasan terperinci setiap soal akan tampil secara otomatis setelah Anda mengirimkan seluruh jawaban.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form Identitas Siswa -->
+                <div class="md:col-span-5 bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center border-b border-slate-100 pb-3 mb-4">
+                            <i class="fa-solid fa-id-card text-brand-600 mr-2.5 text-xl"></i> Identitas Peserta Tes
+                        </h3>
+                        <form id="form-identity" class="space-y-4">
+                            <div>
+                                <label for="input-nama" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Nama Lengkap Siswa <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" id="input-nama" required placeholder="Contoh: Ahmad Zakaria" class="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="input-kelas" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Pilihan Kelas <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-chalkboard-user"></i></span>
+                                    <select id="input-kelas" required class="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all bg-white">
+                                        <option value="" disabled selected>-- Pilih Kelas XII TITL --</option>
+                                        <option value="XII TITL 1">XII TITL 1</option>
+                                        <option value="XII TITL 2">XII TITL 2</option>
+                                        <option value="XII TITL 3">XII TITL 3</option>
+                                        <option value="XII TITL 4">XII TITL 4</option>
+                                        <option value="XII TITL 5">XII TITL 5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="input-sekolah" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Nama Sekolah <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-school"></i></span>
+                                    <input type="text" id="input-sekolah" required placeholder="Contoh: SMK Negeri 1 Jakarta" class="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <!-- Alert Box for Empty Inputs -->
+                            <div id="intro-error-msg" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                                <i class="fa-solid fa-circle-exclamation text-red-500 text-base"></i>
+                                <span>Mohon lengkapi seluruh data identitas di atas sebelum memulai tes.</span>
+                            </div>
+                        </form>
+                    </div>
+
+                    <button type="button" onclick="startQuiz()" class="w-full mt-6 py-3.5 px-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group">
+                        <span>Mulai Kerjakan Soal</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: HALAMAN PENGERJAAN KUIS CBT -->
+        <section id="screen-quiz" class="hidden space-y-6">
+            <!-- Top Utility Bar -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                    <span id="quiz-question-counter-badge" class="bg-brand-100 text-brand-800 font-bold px-3 py-1 rounded-lg text-sm border border-brand-200">
+                        Soal <span id="current-question-num">1</span> dari 30
+                    </span>
+                    <span id="flagged-indicator" class="hidden text-xs bg-amber-100 text-amber-800 px-2.5 py-1 rounded-md border border-amber-200 font-medium">
+                        <i class="fa-solid fa-bookmark text-amber-600 mr-1"></i> Ditandai Ragu-Ragu
+                    </span>
+                </div>
+
+                <!-- Timer & Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700">
+                        <i class="fa-regular fa-clock text-brand-600"></i>
+                        <span>Waktu: <span id="quiz-timer" class="font-mono text-brand-700 font-bold">45:00</span></span>
+                    </div>
+                    <button onclick="confirmSubmitQuiz()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl shadow transition-all flex items-center gap-1.5">
+                        <i class="fa-solid fa-check-double"></i>
+                        <span>Selesaikan Tes</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Main Grid (Layout 2 Kolom) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+                <!-- Left Column: Question Content -->
+                <div class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between min-h-[500px]">
+                    
+                    <div>
+                        <!-- Header Kartu Soal (Kompetensi & Catatan) -->
+                        <div class="bg-slate-50 border-b border-slate-200 px-6 py-3.5 flex flex-wrap justify-between items-center gap-2">
+                            <div class="space-y-0.5">
+                                <span class="text-[10px] uppercase tracking-wider font-extrabold text-slate-600 block">Kompetensi TKA</span>
+                                <p id="question-competency" class="text-xs sm:text-sm font-bold text-slate-800"></p>
+                            </div>
+                            <span id="question-notes" class="text-xs bg-indigo-50 text-indigo-700 border border-indigo-200 px-2.5 py-1 rounded-md font-medium"></span>
+                        </div>
+
+                        <!-- Question Text -->
+                        <div class="p-6 space-y-6">
+                            <div class="text-base sm:text-lg font-medium text-slate-900 leading-relaxed space-y-2">
+                                <p id="question-text"></p>
+                            </div>
+
+                            <!-- Question Image / Diagram Container -->
+                            <div id="question-image-container" class="hidden my-4 p-4 bg-slate-50 rounded-xl border border-slate-200 flex justify-center items-center overflow-x-auto min-h-[160px]">
+                                <!-- Dynamically injected SVG/Image -->
+                            </div>
+
+                            <!-- Options A-E -->
+                            <div id="options-container" class="space-y-3 pt-2">
+                                <!-- Options dynamically injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Kartu Soal (Navigasi Tombol) -->
+                    <div class="bg-slate-50 border-t border-slate-200 p-4 px-6 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-2">
+                            <button id="btn-prev" onclick="navigateQuestion(-1)" class="px-4 py-2.5 bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 rounded-xl font-medium text-sm transition-all flex items-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
+                                <i class="fa-solid fa-chevron-left"></i> SEBELUMNYA
+                            </button>
+                            <button id="btn-next" onclick="navigateQuestion(1)" class="px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-sm transition-all flex items-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
+                                SELANJUTNYA <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Checkbox Ragu-ragu -->
+                        <label class="inline-flex items-center gap-2 cursor-pointer bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 px-3 py-2 rounded-xl text-xs font-semibold transition-all">
+                            <input type="checkbox" id="chk-flag" onchange="toggleFlagCurrentQuestion()" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                            <span><i class="fa-solid fa-bookmark mr-1"></i> Ragu-Ragu</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Right Column: Question Palette & Legend -->
+                <div class="lg:col-span-4 bg-white rounded-2xl shadow-sm border border-slate-200 p-5 space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                        <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-grip text-brand-600"></i> Navigasi Nomor Soal
+                        </h4>
+                        <span id="answered-stat" class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">0 / 30 Terjawab</span>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="grid grid-cols-3 gap-2 text-[11px] font-medium text-slate-600 pb-2 border-b border-slate-100">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-emerald-600"></span> Terjawab
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-amber-500"></span> Ragu-Ragu
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-slate-200"></span> Belum
+                        </div>
+                    </div>
+
+                    <!-- Number Grid -->
+                    <div id="question-palette-grid" class="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-5 gap-2 max-h-[320px] overflow-y-auto custom-scrollbar p-1">
+                        <!-- Number buttons generated via JS -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SCREEN 3: HASIL & PEMBAHASAN LENGKAP -->
+        <section id="screen-result" class="hidden space-y-8">
+            <!-- Score Summary Banner -->
+            <div class="bg-gradient-to-r from-slate-900 via-brand-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-700 space-y-6">
+                <div class="flex flex-wrap justify-between items-center border-b border-slate-700 pb-6 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-full">
+                            Hasil Akhir Ujian
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 text-white">Laporan Hasil Tes Kemampuan Akademik</h2>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Peserta: <strong id="res-student-name" class="text-white"></strong> | Kelas: <strong id="res-student-class" class="text-brand-300"></strong> | Sekolah: <strong id="res-student-school" class="text-slate-200"></strong>
+                        </p>
+                    </div>
+
+                    <!-- Print Button -->
+                    <div class="flex items-center gap-3 no-print">
+                        <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition-all shadow">
+                            <i class="fa-solid fa-print"></i> Cetak Laporan
+                        </button>
+                        <button onclick="restartQuiz()" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 transition-all shadow">
+                            <i class="fa-solid fa-rotate-right"></i> Ulangi Tes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Skor Utama -->
+                    <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 flex flex-col justify-center items-center text-center">
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Skor Akhir</span>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 my-1" id="res-total-score">0</div>
+                        <span class="text-[11px] text-slate-300 font-semibold" id="res-grade-predicate">-</span>
+                    </div>
+
+                    <!-- Jawaban Benar -->
+                    <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 flex flex-col justify-center items-center text-center">
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Jawaban Benar</span>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 my-1"><span id="res-correct-count">0</span> / 30</div>
+                        <span class="text-[11px] text-emerald-300 font-medium" id="res-correct-percent">0%</span>
+                    </div>
+
+                    <!-- Jawaban Salah -->
+                    <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 flex flex-col justify-center items-center text-center">
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Jawaban Salah</span>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-rose-400 my-1" id="res-wrong-count">0</div>
+                        <span class="text-[11px] text-rose-300 font-medium">Membutuhkan evaluasi</span>
+                    </div>
+
+                    <!-- Waktu Tempuh -->
+                    <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700 flex flex-col justify-center items-center text-center">
+                        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Waktu Pengerjaan</span>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-300 my-1" id="res-time-taken">00:00</div>
+                        <span class="text-[11px] text-slate-300 font-medium">Selesai dikumpulkan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discussion Header & Filter -->
+            <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-center gap-4 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-book-open-reader text-brand-600"></i> Pembahasan Soal Terperinci
+                        </h3>
+                        <p class="text-xs text-slate-600">Pelajari pembahasan di bawah ini untuk memahami setiap indikator kompetensi dan acuan standar.</p>
+                    </div>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-semibold no-print">
+                        <button onclick="filterDiscussion('all')" id="filter-btn-all" class="px-3 py-1.5 rounded-lg bg-white text-slate-800 shadow-sm transition-all">Semua (30)</button>
+                        <button onclick="filterDiscussion('correct')" id="filter-btn-correct" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all">Benar</button>
+                        <button onclick="filterDiscussion('wrong')" id="filter-btn-wrong" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all">Salah/Kosong</button>
+                    </div>
+                </div>
+
+                <!-- Discussion Items Container -->
+                <div id="discussion-list-container" class="space-y-6">
+                    <!-- Dynamic Discussion Cards injected here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 mt-8 text-center text-xs text-slate-500 no-print">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>&copy; 2026 TKA Ketenagalistrikan TITL. Sesuai Standar PUIL, SNI, dan Kurikulum Merdeka.</p>
+            <p class="text-slate-400">Direkayasa untuk Evaluasi Pembelajaran Teknik Instalasi Tenaga Listrik</p>
+        </div>
+    </footer>
+
+    <script>
+        // Comprehensive Question Database based strictly on the user's provided document table.
+        // 15 Competencies * 2 Questions = 30 Total MCQs with options A-E, detailed explanations, and 15 SVG diagrams.
+        const quizQuestions = [
+            // COMPETENCY 1: Mengidentifikasi komponen dan fungsi sistem tenaga listrik (pembangkit, transmisi, distribusi)
+            {
+                id: 1,
+                competency: "Mengidentifikasi komponen & fungsi sistem tenaga listrik",
+                notes: "Fokus pada sistem tenaga listrik secara umum",
+                question: "Komponen sistem tenaga listrik yang ditunjukkan pada Diagram Blok Sistem Tenaga Listrik berikut berfungsi untuk menurunkan tegangan ekstra tinggi (500 kV) menjadi tegangan menengah (20 kV) sebelum disalurkan ke jaringan distribusi primer adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 160" class="w-full max-w-xl h-auto font-sans">
+                    <rect width="650" height="160" fill="#f8fafc" rx="12"/>
+                    <!-- Power Plant -->
+                    <rect x="20" y="45" width="90" height="70" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+                    <text x="65" y="78" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">PEMBANGKIT</text>
+                    <text x="65" y="94" fill="#93c5fd" font-size="10" text-anchor="middle">11 kV - 24 kV</text>
+                    <!-- Arrow 1 -->
+                    <path d="M 110 80 L 140 80" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)" fill="none"/>
+                    <!-- Step Up Trafo -->
+                    <rect x="140" y="45" width="90" height="70" rx="8" fill="#334155" stroke="#3b82f6" stroke-width="2"/>
+                    <text x="185" y="75" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">GI STEP-UP</text>
+                    <text x="185" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">500 kV EHV</text>
+                    <!-- Arrow 2 -->
+                    <path d="M 230 80 L 260 80" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                    <!-- Transmission Line -->
+                    <rect x="260" y="45" width="100" height="70" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="310" y="75" fill="#fde68a" font-size="10" font-weight="bold" text-anchor="middle">TRANSMISI (SUTET)</text>
+                    <text x="310" y="92" fill="#cbd5e1" font-size="9" text-anchor="middle">Saluran 500 kV</text>
+                    <!-- Arrow 3 -->
+                    <path d="M 360 80 L 390 80" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                    <!-- Target Substation [X] -->
+                    <rect x="390" y="40" width="110" height="80" rx="8" fill="#2563eb" stroke="#1d4ed8" stroke-width="3"/>
+                    <text x="445" y="73" fill="#ffffff" font-size="12" font-weight="extrabold" text-anchor="middle">GARDU INDUK [ X ]</text>
+                    <text x="445" y="93" fill="#fef08a" font-size="11" font-weight="bold" text-anchor="middle">500kV → 20kV</text>
+                    <!-- Arrow 4 -->
+                    <path d="M 500 80 L 530 80" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                    <!-- Distribution / Consumer -->
+                    <rect x="530" y="45" width="100" height="70" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+                    <text x="580" y="75" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">DISTRIBUSI</text>
+                    <text x="580" y="92" fill="#a7f3d0" font-size="9" text-anchor="middle">20kV / 220V</text>
+                </svg>`,
+                options: [
+                    "Generator Pembangkit Utama",
+                    "Gardu Induk Step-Up Penaik Tegangan",
+                    "Gardu Induk Step-Down / GI Distribusi",
+                    "Transformator Isolasi Khusus Pelanggan",
+                    "Panel Hubung Bagi Tegangan Rendah (PHB-TR)"
+                ],
+                answerIndex: 2, // C
+                explanation: "Gardu Induk Step-Down (GI Distribusi) berfungsi mereduksi/menurunkan tegangan ekstra tinggi dari saluran transmisi (500 kV) menjadi tegangan menengah (20 kV) agar aman disalurkan melalui sistem distribusi primer."
+            },
+            {
+                id: 2,
+                competency: "Mengidentifikasi komponen & fungsi sistem tenaga listrik",
+                notes: "Fokus pada sistem tenaga listrik secara umum",
+                question: "Urutan tahap penyaluran energi listrik secara rasional dari sumber hingga sampai ke rumah konsumen yang benar adalah...",
+                options: [
+                    "Pembangkit Listrik → Jaringan Distribusi Sekunder → Transmisi Tegangan Tinggi → Gardu Induk → Konsumen",
+                    "Pembangkit Listrik → Transmisi Tegangan Tinggi/Ekstra Tinggi → Gardu Induk → Jaringan Distribusi Primer → Jaringan Distribusi Sekunder → Konsumen",
+                    "Transmisi → Pembangkit → Gardu Induk → Konsumen → Jaringan Distribusi",
+                    "Pembangkit Listrik → Konsumen → Jaringan Transmisi → Gardu Induk → Distribusi",
+                    "Gardu Induk → Pembangkit Listrik → Jaringan Transmisi → Jaringan Distribusi → Konsumen"
+                ],
+                answerIndex: 1, // B
+                explanation: "Alur umum sistem tenaga listrik dimulai dari Pembangkit Listrik (menghasilkan listrik), dinaikkan tegangannya ke Saluran Transmisi (EHV/HV), diturunkan di Gardu Induk ke Jaringan Distribusi Primer (20kV), lalu diturunkan lagi ke Distribusi Sekunder (220V/380V) hingga sampai ke Konsumen."
+            },
+
+            // COMPETENCY 2: Menerapkan teknologi Industri 4.0 dalam bidang ketenagalistrikan
+            {
+                id: 3,
+                competency: "Menerapkan teknologi Industri 4.0 dalam ketenagalistrikan",
+                notes: "Mencakup IoT, smart devices, SCADA, HMI",
+                question: "Tampilan antarmuka grafis layar sentuh (HMI Screen) pada gardu otomasi Industri 4.0 di bawah ini berfungsi utama sebagai...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" class="w-full max-w-md h-auto font-sans">
+                    <rect width="520" height="180" fill="#0f172a" rx="12" stroke="#334155" stroke-width="4"/>
+                    <!-- Top Bar -->
+                    <rect x="0" y="0" width="520" height="30" fill="#1e293b" rx="8"/>
+                    <circle cx="20" cy="15" r="5" fill="#ef4444"/>
+                    <circle cx="36" cy="15" r="5" fill="#f59e0b"/>
+                    <circle cx="52" cy="15" r="5" fill="#10b981"/>
+                    <text x="260" y="20" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">HMI MONITORING SYSTEM - GARDU INDUK 20kV</text>
+                    <!-- Cards -->
+                    <rect x="25" y="45" width="145" height="115" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="97" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">TEGANGAN FASA</text>
+                    <text x="97" y="100" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">20.4 kV</text>
+                    <text x="97" y="140" fill="#10b981" font-size="9" text-anchor="middle">● STATUS: NORMAL</text>
+
+                    <rect x="187" y="45" width="145" height="115" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="260" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">ARUS BEBAN TOTAL</text>
+                    <text x="260" y="100" fill="#f59e0b" font-size="20" font-weight="bold" text-anchor="middle">145 A</text>
+                    <text x="260" y="140" fill="#10b981" font-size="9" text-anchor="middle">● BEBAN 68%</text>
+
+                    <rect x="350" y="45" width="145" height="115" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="422" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">KONTROL BREAKER</text>
+                    <rect x="370" y="85" width="105" height="30" rx="6" fill="#16a34a"/>
+                    <text x="422" y="104" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">CB CLOSE (ON)</text>
+                    <text x="422" y="140" fill="#cbd5e1" font-size="9" text-anchor="middle">TOUCH TO SWITCH</text>
+                </svg>`,
+                options: [
+                    "Pengubah tegangan AC menjadi DC untuk catu daya cadangan",
+                    "Antarmuka visual grafis real-time untuk memantau indikator parameter listrik dan tombol kontrol interaktif bagi operator",
+                    "Sensor suhu nirkabel untuk mengukur temperatur inti transformator",
+                    "Perangkat keras pemutus arus otomatis saat terjadi korsleting",
+                    "Modul transmisi radio jarak jauh berbasis gelombang mikro"
+                ],
+                answerIndex: 1, // B
+                explanation: "HMI (Human Machine Interface) merupakan antarmuka layar grafis interaktif yang menghubungkan operator dengan sistem PLC/SCADA untuk memantau data real-time (tegangan, arus) serta mengendalikan sakelar/breaker."
+            },
+            {
+                id: 4,
+                competency: "Menerapkan teknologi Industri 4.0 dalam ketenagalistrikan",
+                notes: "Mencakup IoT, smart devices, SCADA, HMI",
+                question: "Penggunaan teknologi SCADA (Supervisory Control and Data Acquisition) pada jaringan distribusi smart grid memungkinkan operator untuk...",
+                options: [
+                    "Memperbaiki fisik kabel yang putus secara otomatis tanpa teknisi",
+                    "Memantau, mengumpulkan data parameter listrik, dan mengendalikan sakelar pembagi secara terpusat dari jarak jauh",
+                    "Menghasilkan energi listrik tanpa membutuhkan bahan bakar atau energi terbarukan",
+                    "Menghilangkan rugi-rugi daya (losses) pada saluran transmisi secara 100%",
+                    "Mengubah arus listrik bolak-balik menjadi arus searah tanpa komponen elektronika"
+                ],
+                answerIndex: 1, // B
+                explanation: "SCADA digunakan untuk pengawasan (supervisory), pengendalian (control), dan akuisisi data (data acquisition) sistem kelistrikan berfasilitas IoT secara jarak jauh dari pusat kontrol (Control Center)."
+            },
+
+            // COMPETENCY 3: Menerapkan regulasi dan standar kelistrikan yang berlaku
+            {
+                id: 5,
+                competency: "Menerapkan regulasi dan standar kelistrikan yang berlaku",
+                notes: "PUIL, SNI, standar internasional",
+                question: "Berdasarkan standar Persyaratan Umum Instalasi Listrik (PUIL / SNI 0225) pada gambar pengenal warna isolasi kabel di bawah ini, warna untuk Penghantar Netral (N) dan Penghantar Proteksi/Pentanahan (PE) berturut-turut ditunjukkan oleh kode...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 140" class="w-full max-w-md h-auto font-sans">
+                    <rect width="550" height="140" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Cable 1: Phase -->
+                    <rect x="30" y="30" width="140" height="35" rx="6" fill="#78350f"/>
+                    <text x="100" y="52" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">COKELAT / HITAM (L)</text>
+                    <text x="100" y="85" fill="#475569" font-size="10" font-weight="bold" text-anchor="middle">FASA (L1/L2/L3)</text>
+                    <!-- Cable 2: Neutral -->
+                    <rect x="205" y="30" width="140" height="35" rx="6" fill="#2563eb"/>
+                    <text x="275" y="52" fill="#ffffff" font-size="11" font-weight="extrabold" text-anchor="middle">BIRU (N)</text>
+                    <text x="275" y="85" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle">NETRAL (N)</text>
+                    <!-- Cable 3: Grounding -->
+                    <rect x="380" y="30" width="140" height="35" rx="6" fill="#15803d"/>
+                    <path d="M 380 42 L 520 42 M 380 54 L 520 54" stroke="#eab308" stroke-width="5"/>
+                    <text x="450" y="52" fill="#ffffff" font-size="10" font-weight="extrabold" text-anchor="middle">KUNING-HIJAU (PE)</text>
+                    <text x="450" y="85" fill="#15803d" font-size="10" font-weight="bold" text-anchor="middle">PENTANAHAN (PE)</text>
+                </svg>`,
+                options: [
+                    "Warna Merah untuk Netral dan Warna Hitam untuk Pentanahan",
+                    "Warna Kuning untuk Netral dan Warna Kuning-Hijau untuk Pentanahan",
+                    "Warna Biru untuk Netral dan Warna Loreng Kuning-Hijau untuk Pentanahan",
+                    "Warna Cokelat untuk Netral dan Warna Abu-Abu untuk Pentanahan",
+                    "Warna Hitam untuk Netral dan Warna Merah untuk Pentanahan"
+                ],
+                answerIndex: 2, // C
+                explanation: "Sesuai PUIL (SNI 0225), standar warna isolasi pengenal adalah: Biru untuk Penghantar Netral (N) dan Loreng Kuning-Hijau untuk Penghantar Proteksi/Pentanahan (PE)."
+            },
+            {
+                id: 6,
+                competency: "Menerapkan regulasi dan standar kelistrikan yang berlaku",
+                notes: "PUIL, SNI, standar internasional",
+                question: "Tujuan utama ditetapkannya regulasi dan standar PUIL serta SNI dalam perencanaan dan pemasangan instalasi listrik adalah...",
+                options: [
+                    "Meminimalkan biaya pembelian bahan dan alat kelistrikan secara mutlak",
+                    "Memastikan keselamatan manusia, ternak, dan harta benda dari bahaya listrik serta menjamin kelancaran fungsi instalasi",
+                    "Mewajibkan penggunaan merek luar negeri tertentu pada setiap bangunan usaha",
+                    "Mengurangi daya tahan komponen agar lebih sering dilakukan pergantian",
+                    "Menghilangkan kebutuhan sistem pentanahan (grounding) pada instalasi daya"
+                ],
+                answerIndex: 1, // B
+                explanation: "Tujuan utama PUIL dan SNI adalah menjamin keselamatan manusia, makhluk hidup, dan keamanan harta benda dari risiko bahaya listrik (seperti kebakaran dan kejutan listrik) serta memastikan instalasi beroperasi dengan baik."
+            },
+
+            // COMPETENCY 4: Menerapkan prosedur K3 dalam pelaksanaan pekerjaan kelistrikan
+            {
+                id: 7,
+                competency: "Menerapkan prosedur K3 dalam pekerjaan kelistrikan",
+                notes: "Fokus APD, prosedur kerja aman, dan penanganan kecelakaan",
+                question: "Alat Pelindung Diri (APD) khusus pada gambar di bawah ini yang wajib digunakan saat melakukan inspeksi/perbaikan pada Panel Hubung Bagi Tegangan Menengah untuk melindungi pekerja dari ledakan busur api (arc flash) adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" class="w-full max-w-md h-auto font-sans">
+                    <rect width="500" height="160" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Helmet & Face Shield -->
+                    <g transform="translate(30, 20)">
+                        <rect x="0" y="0" width="120" height="120" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+                        <circle cx="60" cy="50" r="28" fill="#f59e0b"/>
+                        <path d="M 35 55 Q 60 90 85 55" fill="#1e293b" opacity="0.8"/>
+                        <text x="60" y="106" fill="#1e3a8a" font-size="10" font-weight="bold" text-anchor="middle">Face Shield 20kV</text>
+                    </g>
+                    <!-- Arc Suit -->
+                    <g transform="translate(190, 20)">
+                        <rect x="0" y="0" width="120" height="120" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+                        <path d="M 35 30 L 85 30 L 95 100 L 25 100 Z" fill="#dc2626"/>
+                        <rect x="45" y="45" width="30" height="40" fill="#fef08a" opacity="0.6"/>
+                        <text x="60" y="106" fill="#1e3a8a" font-size="10" font-weight="bold" text-anchor="middle">Arc Flash Suit</text>
+                    </g>
+                    <!-- Insulated Gloves -->
+                    <g transform="translate(350, 20)">
+                        <rect x="0" y="0" width="120" height="120" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+                        <rect x="40" y="30" width="40" height="60" rx="12" fill="#d97706"/>
+                        <text x="60" y="106" fill="#1e3a8a" font-size="10" font-weight="bold" text-anchor="middle">Sarung Tangan 1000V</text>
+                    </g>
+                </svg>`,
+                options: [
+                    "Sarung tangan bahan katun tipis dan kacamata hitam biasa",
+                    "Baju kerja tahan api (Arc Flash Suit), helm berpelindung wajah (Face Shield) rating tegangan, dan sarung tangan isolasi listrik",
+                    "Masker medis, rompi kain fosfor, dan sepatu olahraga standar",
+                    "Apron bahan kulit pengelas dan helm konstruksi tanpa rating listrik",
+                    "Jas hujan bahan plastik sintesis dan sepatu boots karet biasa"
+                ],
+                answerIndex: 1, // B
+                explanation: "Pekerjaan pada tegangan menengah berisiko tinggi timbulnya percikan busur api (arc flash). APD standar mencakup Arc Flash Suit tahan panas/api, face shield rating tegangan, serta sarung tangan isolasi listrik (dielectric gloves)."
+            },
+            {
+                id: 8,
+                competency: "Menerapkan prosedur K3 dalam pekerjaan kelistrikan",
+                notes: "Fokus APD, prosedur kerja aman, dan penanganan kecelakaan",
+                question: "Tindakan PERTAMA yang paling tepat dan aman dilakukan apabila melihat seorang rekan kerja tersengat listrik dan tubuhnya masih menempel pada kabel bertegangan adalah...",
+                options: [
+                    "Langsung memegang tangan korban dengan tangan telanjang untuk menariknya",
+                    "Menyiram air ke arah tubuh korban untuk memadamkan muatan listrik",
+                    "Segera memutus/mematikan sumber listrik utama (Circuit Breaker/Sakelar Utama) atau mengisolasi aliran listrik terlebih dahulu",
+                    "Mendorong korban menggunakan batang besi un-insulated agar terlepas",
+                    "Berlari mencari bantuan di luar gedung tanpa melakukan tindakan darurat apapun"
+                ],
+                answerIndex: 2, // C
+                explanation: "Langkah pertama penyelamatan kecelakaan listrik adalah MEMUTUSKAN SUMBER ELECTRICITY terlebih dahulu (off-kan MCB/Sakelar Utama). Jangan menyentuh korban langsung saat masih terhubung dengan aliran listrik untuk mencegah penolong ikut tersengat."
+            },
+
+            // COMPETENCY 5: Menentukan dan menganalisis besaran listrik dasar (tegangan, arus, hambatan, daya)
+            {
+                id: 9,
+                competency: "Menentukan & menganalisis besaran listrik dasar",
+                notes: "Hukum Ohm, Hukum Kirchhoff",
+                question: "Perhatikan gambar skema elemen pemanas DC berikut. Jika pemanas memiliki hambatan R = 40 Ω dihubungkan pada sumber tegangan V = 120 Volt, besar kuat arus (I) dan daya listrik (P) yang diserap adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="420" height="150" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Voltage Source -->
+                    <circle cx="70" cy="75" r="24" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+                    <text x="70" y="70" fill="#2563eb" font-size="14" font-weight="extrabold" text-anchor="middle">+</text>
+                    <text x="70" y="88" fill="#2563eb" font-size="14" font-weight="extrabold" text-anchor="middle">-</text>
+                    <text x="70" y="122" fill="#1e40af" font-size="11" font-weight="bold" text-anchor="middle">V = 120 V</text>
+                    <!-- Wires -->
+                    <path d="M 70 51 L 70 30 L 330 30 L 330 55" stroke="#334155" stroke-width="3" fill="none"/>
+                    <path d="M 70 99 L 70 120 L 330 120 L 330 95" stroke="#334155" stroke-width="3" fill="none"/>
+                    <!-- Current Arrow -->
+                    <path d="M 160 22 L 210 22" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+                    <text x="185" y="16" fill="#dc2626" font-size="10" font-weight="bold" text-anchor="middle">Arus (I = ?)</text>
+                    <!-- Resistor Symbol -->
+                    <path d="M 330 55 L 320 60 L 340 65 L 320 70 L 340 75 L 320 80 L 340 85 L 330 90" stroke="#d97706" stroke-width="3" fill="none"/>
+                    <text x="350" y="78" fill="#b45309" font-size="12" font-weight="bold">R = 40 Ω</text>
+                </svg>`,
+                options: [
+                    "3 Ampere dan 360 Watt",
+                    "3 Ampere dan 120 Watt",
+                    "0,33 Ampere dan 40 Watt",
+                    "4 Ampere dan 480 Watt",
+                    "2 Ampere dan 240 Watt"
+                ],
+                answerIndex: 0, // A
+                explanation: "Menggunakan Hukum Ohm: I = V / R = 120 V / 40 Ω = 3 A. Rumus Daya: P = V × I = 120 V × 3 A = 360 Watt."
+            },
+            {
+                id: 10,
+                competency: "Menentukan & menganalisis besaran listrik dasar",
+                notes: "Hukum Ohm, Hukum Kirchhoff",
+                question: "Berdasarkan Hukum Kirchhoff I tentang arus listrik pada titik percabangan: Jika terdapat arus masuk I₁ = 4 A dan I₂ = 6 A, serta arus keluar I₃ = 3 A dan I₄, maka besar arus keluar I₄ adalah...",
+                options: [
+                    "13 Ampere",
+                    "10 Ampere",
+                    "7 Ampere",
+                    "3 Ampere",
+                    "1 Ampere"
+                ],
+                answerIndex: 2, // C
+                explanation: "Hukum Kirchhoff I: Σ I_masuk = Σ I_keluar. (I₁ + I₂) = (I₃ + I₄) → (4 + 6) = (3 + I₄) → 10 = 3 + I₄ → I₄ = 7 Ampere."
+            },
+
+            // COMPETENCY 6: Menghitung dan menganalisis rangkaian listrik arus searah sederhana
+            {
+                id: 11,
+                competency: "Menghitung & menganalisis rangkaian arus searah (DC)",
+                notes: "Rangkaian seri, paralel, dan kombinasi",
+                question: "Tiga buah resistor R₁ = 6 Ω, R₂ = 12 Ω, dan R₃ = 4 Ω dirangkai secara paralel seperti gambar berikut. Besar hambatan total (R_pengganti) rangkaian tersebut adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 160" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="450" height="160" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Main Lines -->
+                    <path d="M 30 80 L 100 80 M 100 30 L 100 130 M 100 30 L 350 30 M 100 130 L 350 130 M 350 30 L 350 130 M 350 80 L 420 80" stroke="#334155" stroke-width="2.5" fill="none"/>
+                    <!-- R1 Parallel Branch -->
+                    <rect x="180" y="20" width="80" height="20" fill="#ffffff" stroke="#2563eb" stroke-width="2" rx="4"/>
+                    <text x="220" y="34" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle">R1 = 6 Ω</text>
+                    <!-- R2 Parallel Branch -->
+                    <path d="M 100 80 L 350 80" stroke="#334155" stroke-width="2.5"/>
+                    <rect x="180" y="70" width="80" height="20" fill="#ffffff" stroke="#2563eb" stroke-width="2" rx="4"/>
+                    <text x="220" y="84" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle">R2 = 12 Ω</text>
+                    <!-- R3 Parallel Branch -->
+                    <rect x="180" y="120" width="80" height="20" fill="#ffffff" stroke="#2563eb" stroke-width="2" rx="4"/>
+                    <text x="220" y="134" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle">R3 = 4 Ω</text>
+                </svg>`,
+                options: [
+                    "22 Ω",
+                    "2 Ω",
+                    "4 Ω",
+                    "6 Ω",
+                    "1,5 Ω"
+                ],
+                answerIndex: 1, // B
+                explanation: "1/R_total = 1/R₁ + 1/R₂ + 1/R₃ = 1/6 + 1/12 + 1/4 = (2 + 1 + 3) / 12 = 6/12 = 1/2. Maka R_total = 2 Ω."
+            },
+            {
+                id: 12,
+                competency: "Menghitung & menganalisis rangkaian arus searah (DC)",
+                notes: "Rangkaian seri, paralel, dan kombinasi",
+                question: "Dua buah resistor R₁ = 10 Ω dan R₂ = 20 Ω dihubungkan secara seri dengan sumber tegangan searah DC sebesar 60 Volt. Besar tegangan jatuh (drop voltage) pada resistor R₂ adalah...",
+                options: [
+                    "20 Volt",
+                    "30 Volt",
+                    "40 Volt",
+                    "60 Volt",
+                    "10 Volt"
+                ],
+                answerIndex: 2, // C
+                explanation: "R_total = R₁ + R₂ = 10 + 20 = 30 Ω. Arus Total I = V / R_total = 60 / 30 = 2 A. Tegangan jatuh pada R₂ (V_R2) = I × R₂ = 2 A × 20 Ω = 40 Volt."
+            },
+
+            // COMPETENCY 7: Menghitung dan menganalisis rangkaian listrik arus bolak-balik
+            {
+                id: 13,
+                competency: "Menghitung & menganalisis rangkaian arus bolak-balik (AC)",
+                notes: "Rangkaian R, L, C dan daya AC",
+                question: "Rangkaian AC Seri R-L-C pada gambar di bawah memiliki nilai Resistor R = 30 Ω, Induktor X_L = 80 Ω, dan Kapasitor X_C = 40 Ω. Besar Impedansi Total (Z) rangkaian adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 140" class="w-full max-w-md h-auto font-sans">
+                    <rect width="500" height="140" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- AC Source -->
+                    <circle cx="50" cy="70" r="20" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+                    <path d="M 40 70 Q 45 60 50 70 T 60 70" stroke="#2563eb" stroke-width="2" fill="none"/>
+                    <text x="50" y="110" fill="#1e40af" font-size="10" font-weight="bold" text-anchor="middle">Sumber AC</text>
+                    <!-- Connecting Wires -->
+                    <path d="M 50 50 L 50 30 L 450 30 L 450 70 L 450 110 L 50 110 L 50 90" stroke="#334155" stroke-width="2" fill="none"/>
+                    <!-- R component -->
+                    <rect x="110" y="20" width="60" height="20" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+                    <text x="140" y="34" fill="#0369a1" font-size="9" font-weight="bold" text-anchor="middle">R = 30 Ω</text>
+                    <!-- L component -->
+                    <path d="M 230 30 Q 240 15 250 30 Q 260 15 270 30 Q 280 15 290 30" stroke="#d97706" stroke-width="2.5" fill="none"/>
+                    <text x="260" y="50" fill="#b45309" font-size="9" font-weight="bold" text-anchor="middle">XL = 80 Ω</text>
+                    <!-- C component -->
+                    <line x1="360" y1="20" x2="360" y2="40" stroke="#16a34a" stroke-width="3"/>
+                    <line x1="370" y1="20" x2="370" y2="40" stroke="#16a34a" stroke-width="3"/>
+                    <text x="365" y="50" fill="#15803d" font-size="9" font-weight="bold" text-anchor="middle">XC = 40 Ω</text>
+                </svg>`,
+                options: [
+                    "150 Ω",
+                    "50 Ω",
+                    "70 Ω",
+                    "110 Ω",
+                    "30 Ω"
+                ],
+                answerIndex: 1, // B
+                explanation: "Impedansi Z = √(R² + (X_L - X_C)²) = √(30² + (80 - 40)²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50 Ω."
+            },
+            {
+                id: 14,
+                competency: "Menghitung & menganalisis rangkaian arus bolak-balik (AC)",
+                notes: "Rangkaian R, L, C dan daya AC",
+                question: "Pada sistem kelistrikan AC 1-fasa, besarnya Daya Aktif (P) yang berguna untuk melakukan kerja mekanik/panas dihitung menggunakan rumus...",
+                options: [
+                    "P = V × I",
+                    "P = V × I × sin φ",
+                    "P = V × I × cos φ",
+                    "P = V / (I × cos φ)",
+                    "P = I² × Z"
+                ],
+                answerIndex: 2, // C
+                explanation: "Daya Aktif (P) dalam sistem AC diukur dalam satuan Watt dan dirumuskan sebagai P = V × I × cos φ, di mana cos φ adalah faktor daya (power factor)."
+            },
+
+            // COMPETENCY 8: Mengidentifikasi fungsi komponen elektronika
+            {
+                id: 15,
+                competency: "Mengidentifikasi fungsi komponen elektronika",
+                notes: "Komponen pasif dan aktif dasar",
+                question: "Komponen elektronika aktif pada skema di bawah yang memiliki tiga terminal (Basis, Kolektor, Emitor) dan berfungsi sebagai penguat sinyal atau sakelar elektronik adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 150" class="w-full max-w-xs h-auto font-sans">
+                    <rect width="380" height="150" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Base Wire -->
+                    <line x1="60" y1="75" x2="160" y2="75" stroke="#334155" stroke-width="3"/>
+                    <text x="100" y="65" fill="#1e293b" font-size="11" font-weight="bold">Base (B)</text>
+                    <!-- Main Bar -->
+                    <line x1="160" y1="45" x2="160" y2="105" stroke="#0f172a" stroke-width="5"/>
+                    <!-- Collector Wire -->
+                    <line x1="160" y1="55" x2="240" y2="25" stroke="#334155" stroke-width="3"/>
+                    <line x1="240" y1="25" x2="300" y2="25" stroke="#334155" stroke-width="3"/>
+                    <text x="250" y="18" fill="#1e293b" font-size="11" font-weight="bold">Collector (C)</text>
+                    <!-- Emitter Wire -->
+                    <line x1="160" y1="95" x2="240" y2="125" stroke="#334155" stroke-width="3"/>
+                    <polygon points="220,118 240,125 230,105" fill="#2563eb"/>
+                    <line x1="240" y1="125" x2="300" y2="125" stroke="#334155" stroke-width="3"/>
+                    <text x="250" y="142" fill="#1e293b" font-size="11" font-weight="bold">Emitter (E)</text>
+                    <!-- Circle Envelope -->
+                    <circle cx="200" cy="75" r="50" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="4"/>
+                </svg>`,
+                options: [
+                    "Kapasitor Elektrolit",
+                    "Induktor Toroid",
+                    "Transistor BJT NPN",
+                    "Diode Zener",
+                    "Resistor LDR"
+                ],
+                answerIndex: 2, // C
+                explanation: "Transistor BJT (seperti tipe NPN pada gambar) memiliki 3 terminal (Basis, Kolektor, Emitor) dan termasuk komponen aktif yang berfungsi sebagai penguat sinyal serta sakelar elektronik (switching)."
+            },
+            {
+                id: 16,
+                competency: "Mengidentifikasi fungsi komponen elektronika",
+                notes: "Komponen pasif dan aktif dasar",
+                question: "Fungsi utama dari Dioda Penyearah (Rectifier Diode) dalam rangkaian Power Supply (Catu Daya) adalah...",
+                options: [
+                    "Menyimpan muatan listrik dalam bentuk medan magnetik",
+                    "Mengubah tegangan/arus bolak-balik (AC) menjadi tegangan/arus searah (DC) dengan mengalirkan arus satu arah",
+                    "Membatasi arus listrik secara konstan tanpa memperhatikan arah",
+                    "Mengubah sinyal logika digital menjadi sinyal analog",
+                    "Menaikkan atau menurunkan frekuensi gelombang AC"
+                ],
+                answerIndex: 1, // B
+                explanation: "Dioda bersifat menyearahkan arus (melalukan arus pada kondisi forward bias dan menyumbat pada reverse bias), sehingga digunakan untuk mengubah arus AC menjadi arus DC."
+            },
+
+            // COMPETENCY 9: Menerapkan konsep dasar sistem digital dan gerbang logika
+            {
+                id: 17,
+                competency: "Menerapkan konsep sistem digital & gerbang logika",
+                notes: "Sistem bilangan, gerbang logika dasar",
+                question: "Simbol Gerbang Logika 2-input di bawah ini akan menghasilkan output Y = 1 (HIGH) HANYA jika input A dan input B bernilai...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" class="w-full max-w-xs h-auto font-sans">
+                    <rect width="420" height="150" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Inputs -->
+                    <line x1="50" y1="50" x2="140" y2="50" stroke="#334155" stroke-width="3"/>
+                    <text x="40" y="54" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="end">Input A</text>
+                    <line x1="50" y1="100" x2="140" y2="100" stroke="#334155" stroke-width="3"/>
+                    <text x="40" y="104" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="end">Input B</text>
+                    <!-- AND Gate Shape -->
+                    <path d="M 140 30 L 200 30 A 45 45 0 0 1 200 120 L 140 120 Z" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+                    <text x="175" y="80" fill="#1d4ed8" font-size="14" font-weight="extrabold" text-anchor="middle">AND</text>
+                    <!-- Output -->
+                    <line x1="245" y1="75" x2="340" y2="75" stroke="#334155" stroke-width="3"/>
+                    <text x="350" y="79" fill="#1e293b" font-size="12" font-weight="bold">Output Y</text>
+                </svg>`,
+                options: [
+                    "Input A = 0 dan Input B = 1",
+                    "Input A = 0 dan Input B = 0",
+                    "Input A = 1 dan Input B = 1",
+                    "Input A = 1 dan Input B = 0",
+                    "Semua kombinasi input di atas"
+                ],
+                answerIndex: 2, // C
+                explanation: "Gambar di atas adalah Gerbang Logika AND. Prinsip kerja gerbang AND: Output Y bernilai 1 (HIGH) hanya jika KEDUA input (A dan B) bernilai 1 (HIGH)."
+            },
+            {
+                id: 18,
+                competency: "Menerapkan konsep sistem digital & gerbang logika",
+                notes: "Sistem bilangan, gerbang logika dasar",
+                question: "Konversi dari bilangan biner `1011` (basis 2) ke dalam sistem bilangan desimal (basis 10) menghasilkan nilai...",
+                options: [
+                    "9",
+                    "11",
+                    "13",
+                    "15",
+                    "7"
+                ],
+                answerIndex: 1, // B
+                explanation: "1011₂ = (1 × 2³) + (0 × 2²) + (1 × 2¹) + (1 × 2⁰) = 8 + 0 + 2 + 1 = 11 (desimal)."
+            },
+
+            // COMPETENCY 10: Menerapkan prosedur pemeliharaan dan penyimpanan alat kerja
+            {
+                id: 19,
+                competency: "Menerapkan pemeliharaan & penyimpanan alat kerja",
+                notes: "Perawatan rutin dan penyimpanan yang benar",
+                question: "Gambar berikut menunjukkan Tang Kombinasi Berisolasi 1000V. Pemeliharaan rutin yang benar setelah alat ini digunakan adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="450" height="140" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Pliers Metal Jaw -->
+                    <path d="M 60 55 L 120 60 L 150 70 L 120 80 L 60 85 Z" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+                    <circle cx="140" cy="70" r="8" fill="#334155"/>
+                    <!-- Insulated Handles -->
+                    <path d="M 148 65 L 340 40 Q 360 40 360 55 L 340 68 Z" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+                    <path d="M 148 75 L 340 100 Q 360 100 360 85 L 340 72 Z" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+                    <text x="250" y="54" fill="#ffffff" font-size="9" font-weight="bold">1000V INSULATED</text>
+                    <text x="250" y="94" fill="#ffffff" font-size="9" font-weight="bold">1000V INSULATED</text>
+                </svg>`,
+                options: [
+                    "Dicuci menggunakan air sabun dan dimasukkan basah-basah ke dalam tas alat",
+                    "Dibersihkan dari serpihan kotoran, diolesi lapisan minyak pelumas anti-karat tipis pada engsel, dan disimpan di tempat kering",
+                    "Direndam dalam cairan pelarut kimia keras secara terus-menerus",
+                    "Disimpan di area terbuka yang terpapar sinar matahari dan hujan secara langsung",
+                    "Diamplas permukaan isolasi karetnya setiap hari"
+                ],
+                answerIndex: 1, // B
+                explanation: "Pemeliharaan alat tangan (hand tools) dilakukan dengan membersihkan sisa kotoran, mengoleskan minyak/pelumas anti-karat pada engsel/logam, dan menyimpannya di tempat kering ber-rak."
+            },
+            {
+                id: 20,
+                competency: "Menerapkan pemeliharaan & penyimpanan alat kerja",
+                notes: "Perawatan rutin dan penyimpanan yang benar",
+                question: "Alat tangan kelistrikan berisolasi (Insulated Tools 1000V) yang lapisan karet isolasinya sudah terkelupas atau mengalami keretakan parah hendaknya...",
+                options: [
+                    "Dilapisi dengan selotip kertas biasa dan dipergunakan kembali",
+                    "Tetap dipergunakan karena bagian logam intinya masih utuh",
+                    "Dihentikan penggunaannya (diafkir) dan diganti dengan alat baru demi menjamin keselamatan kerja dari bahaya tersetrum",
+                    "Dicat kembali menggunakan cat kayu standar",
+                    "Digunakan khusus untuk pekerjaan tegangan tinggi di atas 20 kV"
+                ],
+                answerIndex: 2, // C
+                explanation: "Isolasi cacat/retak pada insulated tools membatalkan jaminan keamanan (rating isolasi 1000V). Alat tersebut sangat berbahaya dan wajib diafkir (dihentikan penggunaannya) demi K3."
+            },
+
+            // COMPETENCY 11: Mengidentifikasi dan menerapkan alat yang tepat untuk pekerjaan kelistrikan tertentu
+            {
+                id: 21,
+                competency: "Mengidentifikasi & menerapkan alat kerja spesifik",
+                notes: "Pertimbangan efisiensi dan keamanan",
+                question: "Saat melakukan penyambungan terminal kabel penampang besar (50 mm² - 150 mm²) pada skun kabel seperti gambar di bawah, alat kerja presisi yang paling tepat digunakan adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="450" height="150" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Hydraulic Crimper Graphic -->
+                    <rect x="50" y="45" width="160" height="60" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+                    <text x="130" y="72" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">HYDRAULIC CRIMPING</text>
+                    <text x="130" y="88" fill="#93c5fd" font-size="9" text-anchor="middle">PRESS TOOL</text>
+                    <!-- Arrow -->
+                    <path d="M 220 75 L 260 75" stroke="#64748b" stroke-width="2.5" fill="none"/>
+                    <!-- Cable Lug Crimped -->
+                    <path d="M 270 65 L 320 65 L 350 50 L 380 50 L 380 100 L 350 100 L 320 85 L 270 85 Z" fill="#d97706"/>
+                    <circle cx="365" cy="75" r="10" fill="#f8fafc" stroke="#b45309" stroke-width="2"/>
+                    <text x="325" y="125" fill="#78350f" font-size="10" font-weight="bold" text-anchor="middle">Cable Lug 70mm²</text>
+                </svg>`,
+                options: [
+                    "Tang kombinasi standar 8 inchi",
+                    "Tang Crimping Hidrolik (Hydraulic Crimping Tool)",
+                    "Tang potong kawat biasa",
+                    "Palu besi dan pahat beton",
+                    "Obeng minus ukuran besar"
+                ],
+                answerIndex: 1, // B
+                explanation: "Kabel penampang besar memerlukan tekanan pengepresan tinggi agar skun kabel (cable lug) terikat sempurna tanpa resistansi kontak tinggi. Alat yang sesuai adalah Tang Crimping Hidrolik."
+            },
+            {
+                id: 22,
+                competency: "Mengidentifikasi & menerapkan alat kerja spesifik",
+                notes: "Pertimbangan efisiensi dan keamanan",
+                question: "Alat kerja tangan yang dirancang khusus untuk mengupas lapisan isolasi kabel serabut atau pejal tanpa merusak atau memotong serabut tembaga di dalamnya adalah...",
+                options: [
+                    "Tang Pengupas Kabel (Wire Stripper)",
+                    "Gergaji Besi (Hacksaw)",
+                    "Tang Rivet",
+                    "Pisau Cutter tanpa pengunci",
+                    "Geget Pemotong Paku"
+                ],
+                answerIndex: 0, // A
+                explanation: "Wire Stripper (Tang Pengupas Kabel) dirancang dengan presisi sesuai diameter kabel untuk mengupas isolator tanpa merusak inti tembaga."
+            },
+
+            // COMPETENCY 12: Mengidentifikasi jenis dan fungsi alat ukur listrik
+            {
+                id: 23,
+                competency: "Mengidentifikasi jenis & fungsi alat ukur listrik",
+                notes: "Multimeter, clamp meter, insulation tester, earth tester",
+                question: "Alat ukur listrik khusus pada gambar di bawah yang digunakan untuk menguji kualitas tahanan isolasi (insulation resistance) pada belitan motor listrik atau kabel adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="450" height="150" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Megger Body -->
+                    <rect x="40" y="30" width="140" height="90" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="2"/>
+                    <!-- Screen -->
+                    <rect x="60" y="45" width="100" height="40" rx="4" fill="#ecfdf5" stroke="#10b981"/>
+                    <text x="110" y="68" fill="#065f46" font-size="14" font-weight="extrabold" text-anchor="middle">2.50 MΩ</text>
+                    <text x="110" y="80" fill="#047857" font-size="8" text-anchor="middle">TEST VOLT: 500V DC</text>
+                    <!-- Probes -->
+                    <path d="M 180 60 L 260 60 M 180 90 L 260 90" stroke="#ef4444" stroke-width="2.5"/>
+                    <!-- Motor Stator Winding -->
+                    <circle cx="330" cy="75" r="35" fill="#f1f5f9" stroke="#334155" stroke-width="3"/>
+                    <text x="330" y="78" fill="#1e293b" font-size="9" font-weight="bold" text-anchor="middle">MOTOR STATOR</text>
+                </svg>`,
+                options: [
+                    "Earth Tester (Penguji Tahanan Pentanahan)",
+                    "Clamp Meter AC/DC",
+                    "Megger / Insulation Tester",
+                    "Voltmeter Analog",
+                    "Frequency Meter"
+                ],
+                answerIndex: 2, // C
+                explanation: "Insulation Tester (sering disebut Megger / Mega Ohm Meter) menghasilkan tegangan tinggi DC (misal 500V/1000V) untuk mengukur nilai tahanan isolasi dalam satuan Mega Ohm (MΩ)."
+            },
+            {
+                id: 24,
+                competency: "Mengidentifikasi jenis & fungsi alat ukur listrik",
+                notes: "Multimeter, clamp meter, insulation tester, earth tester",
+                question: "Keunggulan utama dari alat ukur Tang Ampere (Clamp Meter) dibandingkan Ampere-meter konvensional saat mengukur arus listrik AC yang sedang mengalir adalah...",
+                options: [
+                    "Harus memutus rangkaian listrik terlebih dahulu saat memasang alat ukur",
+                    "Dapat mengukur arus listrik secara praktis tanpa memutus rangkaian (cukup menjepitkan penjepit/clamp pada satu penghantar)",
+                    "Tidak memerlukan baterai internal untuk beroperasi",
+                    "Hanya dapat digunakan untuk rangkaian arus searah (DC) tegangan tinggi",
+                    "Dapat mengukur tahanan tanah secara otomatis"
+                ],
+                answerIndex: 1, // B
+                explanation: "Clamp meter memanfaatkan prinsip transformasi arus (induksi magnetik). Operator cukup melingkarkan rahang clamp pada satu kawat berarus tanpa memutus kabel/rangkaian."
+            },
+
+            // COMPETENCY 13: Menerapkan prosedur komisioning yang berupa data pengukuran dari kondisi rangkaian/instalasi
+            {
+                id: 25,
+                competency: "Menerapkan prosedur komisioning & data pengukuran",
+                notes: "Interpretasi data pengukuran",
+                question: "Hasil komisioning pengukuran tahanan isolasi antar-fasa pada instalasi penerangan gedung baru dengan tegangan uji 500V DC menunjukkan angka 2,5 MΩ seperti display meter di bawah. Evaluasi hasilnya sesuai standar PUIL (minimal 1 MΩ) adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" class="w-full max-w-sm h-auto font-sans">
+                    <rect width="450" height="140" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Meter Screen -->
+                    <rect x="30" y="25" width="220" height="90" rx="8" fill="#1e293b"/>
+                    <text x="140" y="50" fill="#94a3b8" font-size="10" text-anchor="middle">INSULATION TEST RESULT</text>
+                    <text x="140" y="80" fill="#34d399" font-size="24" font-weight="extrabold" text-anchor="middle">2.50 MΩ</text>
+                    <text x="140" y="100" fill="#f59e0b" font-size="9" text-anchor="middle">U_test = 500V DC</text>
+                    <!-- Standard Badge -->
+                    <rect x="270" y="35" width="150" height="70" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+                    <text x="345" y="60" fill="#15803d" font-size="11" font-weight="bold" text-anchor="middle">SYARAT PUIL</text>
+                    <text x="345" y="78" fill="#166534" font-size="10" font-weight="extrabold" text-anchor="middle">MINIMAL 1.0 MΩ</text>
+                    <text x="345" y="94" fill="#15803d" font-size="9" text-anchor="middle">STATUS: LAYAK (PASS)</text>
+                </svg>`,
+                options: [
+                    "Isolasi buruk dan terjadi korosif tinggi",
+                    "Isolasi Memenuhi Syarat (BAIK) dan aman untuk diberi tegangan listrik karena nilainya di atas ambang batas minimal standar (1 MΩ)",
+                    "Kabel mengalami korsleting total ke tanah",
+                    "Alat ukur mengalami kerusakan serius",
+                    "Arus bocor melebihi 100 Ampere"
+                ],
+                answerIndex: 1, // B
+                explanation: "Sesuai PUIL, tahanan isolasi instalasi tegangan rendah minimal adalah 1 MΩ (untuk tegangan uji 500V). Nilai 2,5 MΩ berada di atas batas minimal, artinya kondisi isolasi layak dan aman."
+            },
+            {
+                id: 26,
+                competency: "Menerapkan prosedur komisioning & data pengukuran",
+                notes: "Interpretasi data pengukuran",
+                question: "Hasil pengukuran tahanan pentanahan (grounding resistance) pada sistem proteksi petir menggunakan Earth Resistance Tester menunjukkan nilai sebesar 3,8 Ω. Standar PUIL mensyaratkan nilai pentanahan maksimal 5 Ω. Analisis dari data ini adalah...",
+                options: [
+                    "Pentanahan Buruk dan wajib ditambahkan elektroda tanah baru",
+                    "Pentanahan LAYAK / MEMENUHI STANDAR karena nilainya berada di bawah batas maksimal 5 Ω",
+                    "Elektroda tanah mengalami gangguan arus bocor ekstrim",
+                    "Pentanahan harus dilepas karena terlalu kecil",
+                    "Nilai tahanan tanah harus bernilai persis 0 Ω agar aman"
+                ],
+                answerIndex: 1, // B
+                explanation: "Standar umum PUIL menetapkan tahanan pentanahan maksimal adalah 5 Ω (makin kecil nilainya semakin baik). Nilai 3,8 Ω berada di bawah 5 Ω, sehingga memenuhi standar."
+            },
+
+            // COMPETENCY 14: Mengidentifikasi dan menentukan simbol-simbol komponen listrik sesuai standar
+            {
+                id: 27,
+                competency: "Mengidentifikasi & menentukan simbol komponen listrik",
+                notes: "Simbol IEC dan SNI",
+                question: "Simbol skematik instalasi listrik standar IEC/SNI pada gambar di bawah ini melambangkan komponen...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 130" class="w-full max-w-xs h-auto font-sans">
+                    <rect width="400" height="130" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Switch Symbol IEC -->
+                    <circle cx="100" cy="65" r="5" fill="#1e293b"/>
+                    <line x1="50" y1="65" x2="95" y2="65" stroke="#1e293b" stroke-width="2.5"/>
+                    <!-- Blade -->
+                    <line x1="100" y1="65" x2="160" y2="35" stroke="#2563eb" stroke-width="3"/>
+                    <!-- Two contacts -->
+                    <circle cx="170" cy="30" r="5" fill="#1e293b"/>
+                    <line x1="175" y1="30" x2="230" y2="30" stroke="#1e293b" stroke-width="2.5"/>
+                    <text x="245" y="34" fill="#1e293b" font-size="10" font-weight="bold">Posisi 1</text>
+                    <circle cx="170" cy="90" r="5" fill="#1e293b"/>
+                    <line x1="175" y1="90" x2="230" y2="90" stroke="#1e293b" stroke-width="2.5"/>
+                    <text x="245" y="94" fill="#1e293b" font-size="10" font-weight="bold">Posisi 2</text>
+                </svg>`,
+                options: [
+                    "Sakelar Tunggal 1 Kutub",
+                    "Sakelar Tukar (Two-Way Switch / Sakelar Hotel SPDT)",
+                    "Stop Kontak 3-Fasa",
+                    "Tombol Tekan (Push Button NC)",
+                    "MCB 3-Kutub"
+                ],
+                answerIndex: 1, // B
+                explanation: "Gambar tersebut adalah simbol Sakelar Tukar (Two-Way Switch / Sakelar Hotel SPDT) menurut standar IEC. Memiliki 1 terminal masukan dan 2 terminal keluaran untuk mengendalikan beban dari dua lokasi berbeda."
+            },
+            {
+                id: 28,
+                competency: "Mengidentifikasi & menentukan simbol komponen listrik",
+                notes: "Simbol IEC dan SNI",
+                question: "Penggunaan garis putus-putus pada gambar diagram skematik instalasi kelistrikan umumnya digunakan untuk melambangkan...",
+                options: [
+                    "Kabel fasa utama berarus besar",
+                    "Penghantar netral utama",
+                    "Saluran sinyal kontrol, interlock mekanik/listrik, atau pengabelan tersembunyi/rencana",
+                    "Kabel tanah tegangan tinggi (XLPE)",
+                    "Pipa konduit besi pejal"
+                ],
+                answerIndex: 2, // C
+                explanation: "Dalam standar simbol IEC, garis putus-putus (dashed line) mengindikasikan koneksi kontrol, interlock mekanis antar komponen, atau jalur tersembunyi."
+            },
+
+            // COMPETENCY 15: Menganalisis single line diagram sistem kelistrikan dan gambar teknik instalasi serta potensi masalahnya
+            {
+                id: 29,
+                competency: "Menganalisis Single Line Diagram (SLD) & potensi masalah",
+                notes: "SLD instalasi & distribusi beserta Evaluasi desain instalasi",
+                question: "Analisis gambar Single Line Diagram (SLD) grup PHB di bawah: Total beban terpasang adalah 3300 Watt (220V). MCB pengaman sirkit terpasang berkapasitas 10 Ampere. Evaluasi potensi masalah pada desain ini adalah...",
+                image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" class="w-full max-w-md h-auto font-sans">
+                    <rect width="520" height="160" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Supply Line -->
+                    <line x1="30" y1="80" x2="120" y2="80" stroke="#1e293b" stroke-width="3"/>
+                    <text x="75" y="65" fill="#1e293b" font-size="10" font-weight="bold" text-anchor="middle">PLN 220V</text>
+                    <!-- MCB Symbol -->
+                    <rect x="120" y="60" width="80" height="40" rx="6" fill="#dc2626"/>
+                    <text x="160" y="84" fill="#ffffff" font-size="12" font-weight="extrabold" text-anchor="middle">MCB 10A</text>
+                    <!-- Line to Load -->
+                    <line x1="200" y1="80" x2="310" y2="80" stroke="#1e293b" stroke-width="3"/>
+                    <!-- Load Box -->
+                    <rect x="310" y="50" width="170" height="60" rx="8" fill="#1e293b"/>
+                    <text x="395" y="73" fill="#fef08a" font-size="11" font-weight="bold" text-anchor="middle">TOTAL BEBAN</text>
+                    <text x="395" y="93" fill="#38bdf8" font-size="14" font-weight="extrabold" text-anchor="middle">3300 W (I = 15A)</text>
+                    <!-- Overload Warning Badge -->
+                    <text x="255" y="135" fill="#dc2626" font-size="11" font-weight="extrabold" text-anchor="middle">⚠ POTENSI MASALAH: OVERLOAD (15A &gt; 10A)</text>
+                </svg>`,
+                options: [
+                    "Desain sudah sangat tepat dan efisien",
+                    "MCB 10A (kapasitas daya ~2200 VA) TERLALU KECIL sehingga MCB akan sering trip/anjlok saat beban 3300W (15A) dinyalakan",
+                    "Kabel penghantar dipastikan akan terbakar seketika",
+                    "Tegangan listrik PLN akan turun menjadi 110 Volt",
+                    "MCB tidak akan pernah bisa dihubungkan ke posisi ON"
+                ],
+                answerIndex: 1, // B
+                explanation: "Kuat arus beban I = P / V = 3300 W / 220 V = 15 Ampere. MCB yang terpasang hanya 10 Ampere, sehingga terjadi Overload yang menyebabkan MCB selalu trip."
+            },
+            {
+                id: 30,
+                competency: "Menganalisis Single Line Diagram (SLD) & potensi masalah",
+                notes: "SLD instalasi & distribusi beserta Evaluasi desain instalasi",
+                question: "Sebuah Single Line Diagram Panel Hubung Bagi (PHB) memperlihatkan tidak tersedianya Sakelar Pemutus Utama (Main Circuit Breaker) sebelum pembagian ke MCB-MCB cabang. Potensi bahaya atau kelemahan utama dari desain ini adalah...",
+                options: [
+                    "Sangat hemat biaya dan dirujuk oleh PUIL",
+                    "Seluruh panel tidak memiliki pengaman proteksi dan pemutus tunggal saat terjadi pemeliharaan atau darurat korsleting pada busbar panel",
+                    "Tegangan masukan akan berkurang separuh secara otomatis",
+                    "Arus listrik tidak dapat mengalir ke MCB cabang",
+                    "Frekuensi listrik naik menjadi 100 Hz"
+                ],
+                answerIndex: 1, // B
+                explanation: "Pemutus Utama (Main Breaker) pada PHB wajib ada menurut PUIL untuk mengisolasi seluruh daya panel secara aman saat perbaikan, perawatan, maupun kondisi darurat."
+            }
+        ];
+
+        // Global Quiz State
+        let studentData = {
+            nama: "",
+            kelas: "",
+            sekolah: ""
+        };
+
+        let userAnswers = new Array(quizQuestions.length).fill(null); // Array of selected option index
+        let flaggedQuestions = new Array(quizQuestions.length).fill(false); // Array of boolean flags
+        let currentQuestionIdx = 0;
+        let timerSeconds = 45 * 60; // 45 minutes limit
+        let timerInterval = null;
+        let timeTakenSeconds = 0;
+
+        function startQuiz() {
+            const nama = document.getElementById("input-nama").value.trim();
+            const kelas = document.getElementById("input-kelas").value;
+            const sekolah = document.getElementById("input-sekolah").value.trim();
+            const errorMsg = document.getElementById("intro-error-msg");
+
+            if (!nama || !kelas || !sekolah) {
+                errorMsg.classList.remove("hidden");
+                return;
+            }
+
+            errorMsg.classList.add("hidden");
+            studentData.nama = nama;
+            studentData.kelas = kelas;
+            studentData.sekolah = sekolah;
+
+            // Set Header user info
+            document.getElementById("nav-user-name").innerText = studentData.nama;
+            document.getElementById("nav-user-class").innerText = studentData.kelas;
+            document.getElementById("header-user-info").classList.remove("hidden");
+            document.getElementById("header-user-info").classList.add("flex");
+
+            // Switch Screen
+            document.getElementById("screen-intro").classList.add("hidden");
+            document.getElementById("screen-quiz").classList.remove("hidden");
+
+            // Build Number Palette Grid
+            renderQuestionPalette();
+
+            // Render First Question
+            renderCurrentQuestion();
+
+            // Start Countdown Timer
+            startTimer();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            const timerDisplay = document.getElementById("quiz-timer");
+
+            timerInterval = setInterval(() => {
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alertModal("Waktu Waktu Habis!", "Waktu pengerjaan tes telah berakhir. Jawaban Anda akan dikumpulkan secara otomatis.", () => {
+                        submitQuiz();
+                    });
+                    return;
+                }
+                timerSeconds--;
+                timeTakenSeconds++;
+
+                const mins = Math.floor(timerSeconds / 60);
+                const secs = timerSeconds % 60;
+                timerDisplay.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function renderQuestionPalette() {
+            const gridContainer = document.getElementById("question-palette-grid");
+            gridContainer.innerHTML = "";
+
+            let answeredCount = 0;
+
+            quizQuestions.forEach((q, idx) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.innerText = idx + 1;
+
+                const isAnswered = userAnswers[idx] !== null;
+                const isFlagged = flaggedQuestions[idx];
+                const isCurrent = idx === currentQuestionIdx;
+
+                if (isAnswered) answeredCount++;
+
+                // Base style
+                let btnClasses = "h-10 w-full rounded-xl text-xs font-bold transition-all border flex items-center justify-center relative ";
+
+                if (isCurrent) {
+                    btnClasses += "ring-2 ring-brand-600 ring-offset-2 ";
+                }
+
+                if (isFlagged) {
+                    btnClasses += "bg-amber-500 text-white border-amber-600 shadow-sm";
+                } else if (isAnswered) {
+                    btnClasses += "bg-emerald-600 text-white border-emerald-700 shadow-sm";
+                } else {
+                    btnClasses += "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200";
+                }
+
+                btn.className = btnClasses;
+                btn.onclick = () => jumpToQuestion(idx);
+
+                gridContainer.appendChild(btn);
+            });
+
+            document.getElementById("answered-stat").innerText = `${answeredCount} / ${quizQuestions.length} Terjawab`;
+        }
+
+        function renderCurrentQuestion() {
+            const q = quizQuestions[currentQuestionIdx];
+
+            // Set Header badges
+            document.getElementById("current-question-num").innerText = currentQuestionIdx + 1;
+            document.getElementById("question-competency").innerText = q.competency;
+            document.getElementById("question-notes").innerText = q.notes;
+            document.getElementById("question-text").innerText = `${currentQuestionIdx + 1}. ${q.question}`;
+
+            // Render Question Image / Diagram if available
+            const imgContainer = document.getElementById("question-image-container");
+            if (q.image) {
+                imgContainer.innerHTML = q.image;
+                imgContainer.classList.remove("hidden");
+            } else {
+                imgContainer.innerHTML = "";
+                imgContainer.classList.add("hidden");
+            }
+
+            // Ragu-ragu Checkbox state
+            const chkFlag = document.getElementById("chk-flag");
+            chkFlag.checked = flaggedQuestions[currentQuestionIdx];
+
+            const flagIndicator = document.getElementById("flagged-indicator");
+            if (flaggedQuestions[currentQuestionIdx]) {
+                flagIndicator.classList.remove("hidden");
+            } else {
+                flagIndicator.classList.add("hidden");
+            }
+
+            // Options Container
+            const optionsContainer = document.getElementById("options-container");
+            optionsContainer.innerHTML = "";
+
+            const optionLabels = ["A", "B", "C", "D", "E"];
+
+            q.options.forEach((optText, optIdx) => {
+                const isSelected = userAnswers[currentQuestionIdx] === optIdx;
+
+                const labelBtn = document.createElement("label");
+                labelBtn.className = `flex items-center p-3.5 sm:p-4 rounded-xl border text-sm cursor-pointer transition-all ${
+                    isSelected
+                        ? "bg-brand-50 border-brand-500 ring-2 ring-brand-500/20 text-brand-900 font-semibold"
+                        : "bg-white border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50"
+                }`;
+
+                labelBtn.innerHTML = `
+                    <input type="radio" name="option_q" value="${optIdx}" ${isSelected ? 'checked' : ''} onchange="selectOption(${optIdx})" class="sr-only">
+                    <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs mr-3.5 transition-colors ${
+                        isSelected ? "bg-brand-600 text-white" : "bg-slate-100 text-slate-600 border border-slate-200"
+                    }">${optionLabels[optIdx]}</span>
+                    <span class="flex-grow">${optText}</span>
+                    ${isSelected ? '<i class="fa-solid fa-circle-check text-brand-600 text-lg ml-2"></i>' : ''}
+                `;
+
+                optionsContainer.appendChild(labelBtn);
+            });
+
+            // Nav Button States
+            document.getElementById("btn-prev").disabled = (currentQuestionIdx === 0);
+            
+            const btnNext = document.getElementById("btn-next");
+            if (currentQuestionIdx === quizQuestions.length - 1) {
+                btnNext.innerHTML = `SELESAI <i class="fa-solid fa-check"></i>`;
+                btnNext.className = "px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm transition-all flex items-center gap-2 shadow-sm";
+            } else {
+                btnNext.innerHTML = `SELANJUTNYA <i class="fa-solid fa-chevron-right"></i>`;
+                btnNext.className = "px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-sm transition-all flex items-center gap-2 shadow-sm";
+            }
+
+            renderQuestionPalette();
+        }
+
+        function selectOption(optIdx) {
+            userAnswers[currentQuestionIdx] = optIdx;
+            renderCurrentQuestion();
+        }
+
+        function toggleFlagCurrentQuestion() {
+            const chkFlag = document.getElementById("chk-flag");
+            flaggedQuestions[currentQuestionIdx] = chkFlag.checked;
+            renderCurrentQuestion();
+        }
+
+        function navigateQuestion(step) {
+            if (step === 1 && currentQuestionIdx === quizQuestions.length - 1) {
+                confirmSubmitQuiz();
+                return;
+            }
+            const newIdx = currentQuestionIdx + step;
+            if (newIdx >= 0 && newIdx < quizQuestions.length) {
+                currentQuestionIdx = newIdx;
+                renderCurrentQuestion();
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            currentQuestionIdx = idx;
+            renderCurrentQuestion();
+        }
+
+        function confirmSubmitQuiz() {
+            const unanswered = userAnswers.filter(a => a === null).length;
+            const flagged = flaggedQuestions.filter(f => f === true).length;
+
+            let msg = `Apakah Anda yakin ingin menyelesaikan tes sekarang?`;
+            if (unanswered > 0 || flagged > 0) {
+                msg = `Catatan Pengerjaan:<br>`;
+                if (unanswered > 0) msg += `• Terdapat <strong class="text-rose-600">${unanswered} soal belum dijawab</strong>.<br>`;
+                if (flagged > 0) msg += `• Terdapat <strong class="text-amber-600">${flagged} soal ragu-ragu</strong>.<br>`;
+                msg += `<br>Apakah Anda yakin ingin mengumpulkan seluruh jawaban?`;
+            }
+
+            confirmModal("Konfirmasi Pengumpulan Ujian", msg, () => {
+                submitQuiz();
+            });
+        }
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+
+            // Hide Quiz Screen, Show Result Screen
+            document.getElementById("screen-quiz").classList.add("hidden");
+            document.getElementById("screen-result").classList.remove("hidden");
+
+            // Calculate Score
+            let correctCount = 0;
+            quizQuestions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.answerIndex) {
+                    correctCount++;
+                }
+            });
+
+            const totalScore = Math.round((correctCount / quizQuestions.length) * 100);
+            const wrongCount = quizQuestions.length - correctCount;
+            const correctPercent = Math.round((correctCount / quizQuestions.length) * 100);
+
+            // Predicate
+            let predicate = "Perlu Bimbingan";
+            if (totalScore >= 90) predicate = "Sangat Memuaskan (A)";
+            else if (totalScore >= 80) predicate = "Baik Sekali (B)";
+            else if (totalScore >= 70) predicate = "Cukup (C)";
+
+            // Update UI Summary
+            document.getElementById("res-student-name").innerText = studentData.nama;
+            document.getElementById("res-student-class").innerText = studentData.kelas;
+            document.getElementById("res-student-school").innerText = studentData.sekolah;
+
+            document.getElementById("res-total-score").innerText = totalScore;
+            document.getElementById("res-grade-predicate").innerText = predicate;
+            document.getElementById("res-correct-count").innerText = correctCount;
+            document.getElementById("res-correct-percent").innerText = `${correctPercent}% Akurasi`;
+            document.getElementById("res-wrong-count").innerText = wrongCount;
+
+            // Time Taken Format
+            const timeMins = Math.floor(timeTakenSeconds / 60);
+            const timeSecs = timeTakenSeconds % 60;
+            document.getElementById("res-time-taken").innerText = `${timeMins}m ${timeSecs}s`;
+
+            // Render Discussion Cards
+            renderDiscussionList('all');
+        }
+
+        function renderDiscussionList(filter) {
+            const container = document.getElementById("discussion-list-container");
+            container.innerHTML = "";
+
+            // Update Filter Button styles
+            const btnAll = document.getElementById("filter-btn-all");
+            const btnCorrect = document.getElementById("filter-btn-correct");
+            const btnWrong = document.getElementById("filter-btn-wrong");
+
+            btnAll.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+            btnCorrect.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+            btnWrong.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+
+            if (filter === 'all') btnAll.className = "px-3 py-1.5 rounded-lg bg-white text-slate-800 shadow-sm font-bold";
+            if (filter === 'correct') btnCorrect.className = "px-3 py-1.5 rounded-lg bg-emerald-600 text-white shadow-sm font-bold";
+            if (filter === 'wrong') btnWrong.className = "px-3 py-1.5 rounded-lg bg-rose-600 text-white shadow-sm font-bold";
+
+            const optionLabels = ["A", "B", "C", "D", "E"];
+
+            quizQuestions.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                const isCorrect = userAns === q.answerIndex;
+
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && isCorrect) return;
+
+                const card = document.createElement("div");
+                card.className = "bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4";
+
+                let statusBadge = isCorrect
+                    ? `<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-3 py-1 rounded-full text-xs flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Jawaban Benar (+3.33)</span>`
+                    : `<span class="bg-rose-100 text-rose-800 border border-rose-300 font-bold px-3 py-1 rounded-full text-xs flex items-center gap-1.5"><i class="fa-solid fa-circle-xmark text-rose-600"></i> Jawaban Salah / Kosong</span>`;
+
+                let optionsHTML = "";
+                q.options.forEach((optText, optIdx) => {
+                    let optStyle = "bg-slate-50 border-slate-200 text-slate-700";
+                    let badge = "";
+
+                    if (optIdx === q.answerIndex) {
+                        optStyle = "bg-emerald-50 border-emerald-400 text-emerald-900 font-semibold";
+                        badge = `<span class="ml-auto text-xs bg-emerald-600 text-white font-bold px-2.5 py-0.5 rounded">Kunci Jawaban</span>`;
+                    }
+                    if (userAns === optIdx && !isCorrect) {
+                        optStyle = "bg-rose-50 border-rose-400 text-rose-900 font-semibold";
+                        badge = `<span class="ml-auto text-xs bg-rose-600 text-white font-bold px-2.5 py-0.5 rounded">Pilihan Anda</span>`;
+                    } else if (userAns === optIdx && isCorrect) {
+                        badge += `<span class="ml-2 text-xs bg-brand-600 text-white font-bold px-2.5 py-0.5 rounded">Pilihan Anda</span>`;
+                    }
+
+                    optionsHTML += `
+                        <div class="p-3 rounded-xl border text-sm flex items-center ${optStyle}">
+                            <span class="w-7 h-7 rounded-lg bg-white/80 border border-slate-300 flex items-center justify-center font-bold text-xs mr-3">${optionLabels[optIdx]}</span>
+                            <span>${optText}</span>
+                            ${badge}
+                        </div>
+                    `;
+                });
+
+                let imageDiscussionHTML = q.image ? `<div class="my-3 p-3 bg-slate-50 rounded-xl border border-slate-200 flex justify-center items-center overflow-x-auto">${q.image}</div>` : '';
+
+                card.innerHTML = `
+                    <div class="flex flex-wrap justify-between items-start gap-2 border-b border-slate-100 pb-3">
+                        <div>
+                            <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">Soal #${idx + 1} • ${q.competency}</span>
+                            <span class="text-[11px] text-slate-500 font-medium">Catatan/Batasan: ${q.notes}</span>
+                        </div>
+                        ${statusBadge}
+                    </div>
+
+                    <p class="text-base font-semibold text-slate-900">${idx + 1}. ${q.question}</p>
+
+                    ${imageDiscussionHTML}
+
+                    <div class="space-y-2 pt-1">
+                        ${optionsHTML}
+                    </div>
+
+                    <div class="bg-brand-50/70 border border-brand-200/80 rounded-xl p-4 text-sm text-brand-950 space-y-1.5 mt-3">
+                        <div class="font-bold flex items-center text-brand-900">
+                            <i class="fa-solid fa-lightbulb text-amber-500 mr-2"></i> Pembahasan Terperinci:
+                        </div>
+                        <p class="leading-relaxed text-slate-700">${q.explanation}</p>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            if (container.children.length === 0) {
+                container.innerHTML = `<div class="text-center py-12 text-slate-400 bg-white rounded-2xl border border-slate-200">Tidak ada soal dalam kategori filter ini.</div>`;
+            }
+        }
+
+        function filterDiscussion(type) {
+            renderDiscussionList(type);
+        }
+
+        function restartQuiz() {
+            confirmModal("Ulangi Tes", "Apakah Anda yakin ingin mengulang tes dari awal? Data pengerjaan saat ini akan direset.", () => {
+                userAnswers.fill(null);
+                flaggedQuestions.fill(false);
+                currentQuestionIdx = 0;
+                timerSeconds = 45 * 60;
+                timeTakenSeconds = 0;
+
+                document.getElementById("screen-result").classList.add("hidden");
+                document.getElementById("screen-intro").classList.remove("hidden");
+                document.getElementById("header-user-info").classList.add("hidden");
+            });
+        }
+
+        function alertModal(title, bodyText, onOk) {
+            const modalBg = document.createElement("div");
+            modalBg.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4";
+            modalBg.innerHTML = `
+                <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4 animate-bounce-in">
+                    <h3 class="text-lg font-bold text-slate-900">${title}</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">${bodyText}</p>
+                    <div class="flex justify-end pt-2">
+                        <button id="modal-ok-btn" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition-all shadow">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modalBg);
+
+            document.getElementById("modal-ok-btn").onclick = () => {
+                document.body.removeChild(modalBg);
+                if (onOk) onOk();
+            };
+        }
+
+        function confirmModal(title, bodyHTML, onConfirm) {
+            const modalBg = document.createElement("div");
+            modalBg.className = "fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4";
+            modalBg.innerHTML = `
+                <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900">${title}</h3>
+                    <div class="text-sm text-slate-600 leading-relaxed">${bodyHTML}</div>
+                    <div class="flex justify-end gap-3 pt-2">
+                        <button id="modal-cancel-btn" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition-all">
+                            Batal
+                        </button>
+                        <button id="modal-confirm-btn" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition-all shadow">
+                            Ya, Lanjutkan
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modalBg);
+
+            document.getElementById("modal-cancel-btn").onclick = () => {
+                document.body.removeChild(modalBg);
+            };
+
+            document.getElementById("modal-confirm-btn").onclick = () => {
+                document.body.removeChild(modalBg);
+                if (onConfirm) onConfirm();
+            };
+        }
+    </script>
+</body>
+</html>
